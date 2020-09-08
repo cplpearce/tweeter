@@ -22,6 +22,9 @@
     <!-- Tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
+    <!-- Feed CSS -->
+    <link rel="stylesheet" href="/styles/feed.css" type="text/css" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -30,6 +33,10 @@
 
     <!-- Counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <!-- Custom  JS -->
+    <script type="text/javascript" src="/scripts/custom.js"></script>
+
   </head>
 
   <body>
@@ -38,9 +45,9 @@
       <span>tweeter</span>
     </nav>
 
-    <header>
+    <header id="user-header">
       <div>
-          <img src="/images/profile-hex.png"> 
+          <img id="avatar" src="/images/profile-hex.png"> 
       </div>
       <br>
       <div>
@@ -49,20 +56,39 @@
   </header>
 
     <!-- Page-specific (main) content here -->
-    <div id="tweet-body">
+    <div id="tweeter-body">
       <main class="container">
         <!-- will be where user input their tweet -->
         <section id="new-tweet">
           <form method="POST" action="/tweets" type="application/x-www-form-urlencoded">
-            <textarea height="47" placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
-            <div id="tweet-bottom">
+            <label id="tweet-text-label" for="tweet-text">What are you humming about?</label>
+            <div class="input" name="text" id="tweet-text" role="textbox" contenteditable="true"></div>
+            <footer id="tweet-footer">
               <button type="submit">Tweet</button>
               <output name="counter" class="counter" for="tweet-text">140</output>
-            </div>
+            </footer>
           </form>
         </section>
         <!-- will be built dynamically by tweet database-->
         <section id="tweet-feed">
+          <article class="tweet">
+            <header>
+              <img class="tweet-hl" src="/images/profile-hex.png" width="50" height="50">
+              <span class="tweet-hl">Rhoda Jacobs</span>
+              <span class="tweet-hl">@rhoda</span>
+            </header>
+            <main class="tweet">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus eos quaerat fugit eius sequi placeat, doloremque recusandae aliquid cumque libero necessitatibus, optio exercitationem quis laborum totam reprehenderit. Fuga, qui laboriosam.
+            </main>
+            <footer>
+              <span class="tweet-fl">10 Days Ago</span>
+              <div class="tweet-fr">
+                <img src="/images/flag-tweet.png">
+                <img src="/images/retweet.png">
+                <img src="/images/like-tweet.png">
+              </div>
+            </footer>
+          </article>
         </section>
       </main>
     </div>

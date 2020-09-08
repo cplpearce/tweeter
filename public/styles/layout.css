@@ -21,14 +21,10 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-main.container {
-  width: 450px;
-  justify-content: center;
-  align-items: center;
-  margin: 50px 25px 50px 25px;
-}
-
-#tweet-body {
+#tweeter-body {
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 600px;
+  margin: 0 auto;
 }

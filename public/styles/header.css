@@ -1,12 +1,12 @@
-header {
+#user-header {
   display: flex;
   height: 450;
   width: 100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: steelblue;
-  background-image: url(../images/vintage-speckles.png);
+  background-color: #ADBEF7;
+  background-image: url(../images/cartographer.png);
   padding: 25px 0px;
   color: white;
 }
