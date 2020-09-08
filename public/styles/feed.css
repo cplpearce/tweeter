@@ -1,3 +1,47 @@
-#tweet-feed {
-  background-color: teal;
+.handle {
+  color: gray;
+}
+
+.tweet-container {
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  border-width: 4px;
+  margin: 15px 0px;
+  padding: 10px 25px;
+}
+
+.tweet-l {
+  align-items: center;
+  align-content: center;
+  margin: 0px 5px;
+  line-height: 45px;
+}
+
+.tweet-r {
+  align-items: center;
+  align-content: center;
+  margin-left: auto;
+  line-height: 45px;
+}
+
+#tweet-feed header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  height: 50px;
+}
+
+#tweet-feed main {
+  font-weight: 400;
+  padding: 5px 10px;
+  border: solid;
+  border-width: 0px 0px 4px 0px;
+}
+
+#tweet-feed footer {
+  display: flex;
+  flex-direction: row;
+  font-size: .7em;
 }

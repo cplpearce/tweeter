@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
     <!-- Custom Google Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,600&display=swap" rel="stylesheet">
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -36,6 +36,9 @@
 
     <!-- Custom  JS -->
     <script type="text/javascript" src="/scripts/custom.js"></script>
+    
+    <!-- Custom  JS -->
+    <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
 
   </head>
 
@@ -47,7 +50,7 @@
 
     <header id="user-header">
       <div>
-          <img id="avatar" src="/images/profile-hex.png"> 
+          <img height="250" width="250" id="avatar" src="/images/avatars/008-man.png"> 
       </div>
       <br>
       <div>
@@ -62,7 +65,7 @@
         <section id="new-tweet">
           <form method="POST" action="/tweets" type="application/x-www-form-urlencoded">
             <label id="tweet-text-label" for="tweet-text">What are you humming about?</label>
-            <div class="input" name="text" id="tweet-text" role="textbox" contenteditable="true"></div>
+            <textarea rows="1" name="text" id="tweet-text"></textarea>
             <footer id="tweet-footer">
               <button type="submit">Tweet</button>
               <output name="counter" class="counter" for="tweet-text">140</output>
@@ -71,18 +74,36 @@
         </section>
         <!-- will be built dynamically by tweet database-->
         <section id="tweet-feed">
-          <article class="tweet">
+          <article class="tweet-container">
             <header>
-              <img class="tweet-hl" src="/images/profile-hex.png" width="50" height="50">
-              <span class="tweet-hl">Rhoda Jacobs</span>
-              <span class="tweet-hl">@rhoda</span>
+              <img class="tweet-l" src="/images/avatars/001-man.png" width="50" height="50">
+              <span class="tweet-l">Jimmy Johns</span>
+              <span class="tweet-r handle">@jjohns</span>
             </header>
-            <main class="tweet">
+            <main>
+              Seize the day 'yo.
+            </main>
+            <footer>
+              <span class="tweet-l">10 Days Ago</span>
+              <div class="tweet-r">
+                <img src="/images/flag-tweet.png">
+                <img src="/images/retweet.png">
+                <img src="/images/like-tweet.png">
+              </div>
+            </footer>
+          </article>
+          <article class="tweet-container">
+            <header>
+              <img class="tweet-l" src="/images/avatars/013-woman.png" width="50" height="50">
+              <span class="tweet-l">Rhoda Jacobs</span>
+              <span class="tweet-r handle">@rhoda</span>
+            </header>
+            <main>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus eos quaerat fugit eius sequi placeat, doloremque recusandae aliquid cumque libero necessitatibus, optio exercitationem quis laborum totam reprehenderit. Fuga, qui laboriosam.
             </main>
             <footer>
-              <span class="tweet-fl">10 Days Ago</span>
-              <div class="tweet-fr">
+              <span class="tweet-l">11 Days Ago</span>
+              <div class="tweet-r">
                 <img src="/images/flag-tweet.png">
                 <img src="/images/retweet.png">
                 <img src="/images/like-tweet.png">

@@ -14,3 +14,10 @@
 #head-h2 {
   margin: 25px 0px 0px 0px;
 }
+
+#avatar {
+  padding: 50px;
+  clip-path: polygon(50% 0, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  background: white;
+  border: 100px;
+}
