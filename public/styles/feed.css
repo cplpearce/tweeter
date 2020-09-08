@@ -13,23 +13,24 @@
 }
 
 .tweet-l {
+  height: 45px;
   align-items: center;
   align-content: center;
-  margin: 15px 5px;
+  margin: 15px 5px 15px 5px;
   line-height: 45px;
 }
 
 .tweet-r {
+  height: 45px;
   align-items: center;
   align-content: center;
-  margin-left: auto;
+  margin: 15px 5px 15px auto;
   line-height: 45px;
 }
 
 #tweet-feed header {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   text-align: center;
   height: 50px;
   margin-bottom: 25px;
