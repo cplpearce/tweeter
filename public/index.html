@@ -63,11 +63,11 @@
       <main class="container">
         <!-- will be where user input their tweet -->
         <section id="new-tweet">
-          <form method="POST" action="/tweets" type="application/x-www-form-urlencoded">
+          <form id="new-tweet-form" method="POST" action="/tweets" type="application/x-www-form-urlencoded">
             <label id="tweet-text-label" for="tweet-text">What are you humming about?</label>
             <textarea rows="1" name="text" id="tweet-text"></textarea>
             <footer id="tweet-footer">
-              <button type="submit">Tweet</button>
+              <button id="new-tweet-btn" type="submit">Tweet</button>
               <output name="counter" class="counter" for="tweet-text">140</output>
             </footer>
           </form>
@@ -84,9 +84,9 @@
               Seize the day 'yo.
             </main>
             <footer>
-              <span class="tweet-l">10 Days Ago</span>
+              <span class="tweet-l">1 Day Ago</span>
               <div class="tweet-r">
-                <object class="icon" type="image/svg+xml" data="/images/icons/bxs-flag-alt.svg"">
+                <object class="icon" type="image/svg+xml" data="/images/icons/bxs-flag-alt.svg">
                   Your browser does not support SVG
                 </object>
                 <img class="icon" src="/images/icons/bx-repost.svg">
