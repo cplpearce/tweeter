@@ -5,9 +5,13 @@
  */
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
+/* stahp chromium/gecko builtin css */
 *, *:before, *:after {
   box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 /*

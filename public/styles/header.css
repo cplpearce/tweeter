@@ -1,12 +1,12 @@
 #user-header {
   display: flex;
-  height: 450;
+  height: 450px;
   width: 100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: #ADBEF7;
-  background-image: url(../images/cartographer.png);
+  background-image: url(../images/userBG/cartographer.png);
   padding: 25px 0px;
   color: white;
 }
@@ -19,5 +19,10 @@
   padding: 50px;
   clip-path: polygon(50% 0, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
   background: white;
-  border: 100px;
+}
+
+nav {
+  position: sticky;
+  top: 0px;
+  z-index: 99;
 }
