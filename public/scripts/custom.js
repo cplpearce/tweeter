@@ -34,4 +34,17 @@ $( document ).ready(() => {
       });
     }
   });
+  // wiggle the form toggle
+  $( '#nav-form-toggle' ).mouseenter(() => {
+    $('#nav-form-toggle').animate({
+      'margin-top': '+=30',
+    }, 500)
+    .then(
+      $('#nav-form-toggle').animate({
+        'margin-top': '-=30',
+      }, 500)
+    )
+  }, () => {
+  });
+
 });

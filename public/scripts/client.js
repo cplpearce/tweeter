@@ -9,15 +9,15 @@ const tweetTemplate = (avatar = '/images/avatars/001-man.png', name = 'Error', h
   return `
   <article class="tweet-container">
   <header>
-    <img class="tweet-l" src="${avatar}" width="50" height="50">
-    <span class="tweet-l">${name}</span>
-    <span class="tweet-r handle">${handle}</span>
+    <img class="tweet-l" src="${escape(avatar)}" width="50" height="50">
+    <span class="tweet-l">${escape(name)}</span>
+    <span class="tweet-r handle">${escape(handle)}</span>
   </header>
   <main>
-    ${tweet}
+    ${escape(tweet)}
   </main>
   <footer>
-    <span class="tweet-l">${new Date(date - Date.now()).getDay()} Days Ago</span>
+    <span class="tweet-l">${new Date(escape(date) - Date.now()).getDay()} Days Ago</span>
     <div class="tweet-r">
       <img class="icon" src="/images/icons/bxs-flag-alt.svg">
       <img class="icon" src="/images/icons/bx-repost.svg">
@@ -28,6 +28,12 @@ const tweetTemplate = (avatar = '/images/avatars/001-man.png', name = 'Error', h
   `
 };
 
+// function to fix sneaky user injects
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 // take in a data object, and parse it by key
 const renderTweetOnFeed = (data, avatarKey = data.user.avatars, nameKey = data.user.name, handleKey = data.user.handle, textKey = data.content.text, dateKey = data.created_at) => {
   $('#tweet-feed').append(tweetTemplate(
