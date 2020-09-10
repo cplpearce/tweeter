@@ -1,7 +1,7 @@
 nav {
   display: flex;
   justify-content: space-between;
-  height: 120px;
+  height: 5em;
   width: 100%;
   color: white;
   background-color: #4056A1;
@@ -33,4 +33,18 @@ nav span#brand {
 
 .flip {
   transform: rotate(180deg);
+}
+
+@media (max-width: 850px) {
+  nav {
+    background-color: #429ef5;
+    background-image: url(../images/userBG/asfalt-dark.png);
+    font-size: 4vw;
+  }
+
+  nav #brand #nav-form-toggle { 
+    position: absolute;
+    height: 3em;
+    top: 3em;
+  }
 }

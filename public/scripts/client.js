@@ -17,7 +17,7 @@ const tweetTemplate = (avatar = '/images/avatars/001-man.png', name = 'Error', h
     ${escape(tweet)}
   </main>
   <footer>
-    <span class="tweet-l">${new Date(escape(date) - Date.now()).getDay()} Days Ago</span>
+    <span class="tweet-l">${new Date(date)} Days Ago</span>
     <div class="tweet-r">
       <img class="icon" src="/images/icons/bxs-flag-alt.svg">
       <img class="icon" src="/images/icons/bx-repost.svg">
@@ -36,8 +36,9 @@ const escape =  function(str) {
 }
 
 // take in a data object, and parse it by key
-const renderTweetOnFeed = (data, avatarKey = data.user.avatars, nameKey = data.user.name, handleKey = data.user.handle, textKey = data.content.text, dateKey = data.created_at) => {
-  $('#tweet-feed').append(tweetTemplate(
+const buildTweet = (data, avatarKey = data.user.avatars, nameKey = data.user.name, handleKey = data.user.handle, textKey = data.content.text, dateKey = data.created_at) => {
+  $('#tweet-feed')
+  .prepend(tweetTemplate(
     avatarKey,
     nameKey,
     handleKey,
@@ -58,7 +59,7 @@ const loadTweets = () => {
     // use ajax to get all our tweets
     $.ajax('/tweets', 'GET')
       // then for each key, reversed (new tweets first) render them
-      .then((response) => {Object.keys(response).reverse().map((tweet) => renderTweetOnFeed(response[tweet]))})
+      .then((response) => {Object.keys(response).map((tweet) => buildTweet(response[tweet]))})
       // then, fade $( '#tweet-feed' ) back in
       .then($( '#tweet-feed' ).fadeTo(1500, 1));
   })
@@ -82,9 +83,10 @@ $( document ).ready(() => {
       // fade out the user input (fadeTo so css:display doens't become hidden)
       $( '#tweet-text' ).fadeTo(500, 0, () => {
         // clear the text area and hard set the counter back to 140
-        $( '#tweet-text' ).val('') && $( ".counter" ).html('140');
-        // reload our tweets
-        loadTweets();
+        $( '#tweet-text' ).val('') && $( ".counter" ).html('140') && $( '#tweet-text' ).fadeTo(500, 1);
+        // get *our* tweet
+        $.get('/tweets', (res) => {console.log(res[res.length - 1])});
+        $.get('/tweets', (res) => {$( '#tweet-feed' ).prepend(buildTweet(res[res.length - 1]))});
       });
     })};
   });

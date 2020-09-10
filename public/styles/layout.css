@@ -26,24 +26,20 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-#tweeter-body {
+#tweeter-container {
   display: flex;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
-  width: 550px;
-  min-width: 550px;
-  margin: 0 auto;
-}
-
-#container {
-  width: 550px;
-  min-width: 550px;
+  min-width: 150px;
+  margin: 0 1em;
 }
 
 #toast {
-  opacity: 0;
-  min-width: 500px;
-  margin-left: -250px;
+  position: absolute;
+  left: 30%;
+  width: 40%;
+  margin: 0 auto;
   background-color: white;
   color: #545149;
   font-family: 'Source Sans Pro', sans-serif;
@@ -51,9 +47,7 @@ body {
   font-weight: 900;
   text-align: center;
   padding: 1em;
-  position: fixed;
   z-index: 5;
-  left: 50%;
   bottom: 70px;
 }
 
@@ -69,24 +63,26 @@ body {
   color: #289947;
 }
 
-/* scroll bar stuff */
-.scrollbar {
-  background-color: #F5F5F5;
-  float: left;
-  height: 300px;
-  margin-bottom: 25px;
-  margin-left: 22px;
-  margin-top: 40px;
-  width: 65px;
-  overflow-y: scroll;
+@media (max-width: 850px) {
+  #toast {
+    width: 60%;
+    left: 20%;
+  }
 }
+@media (min-width: 850px) {
+  #tweeter-container {
+    flex-flow: row;
+    align-items: flex-start;
+    margin-top: 3em;
+  }
+  
+  #user-header {
+    width: 33%;
+    max-width: 15em;
+    margin-right: 5%;
+  }
 
-.force-overflow {
-  min-height: 450px;
-}
-
-@media (max-width: 600px) {
-  body {
-    width: 100%;
+  #user-header h2 {
+    font-size: 1em;
   }
 }

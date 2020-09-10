@@ -4,8 +4,6 @@
 }
 
 .tweet-container {
-  display: flex;
-  flex-direction: column;
   border: solid;
   border-width: 0.2em;
   margin: 1em 0em;

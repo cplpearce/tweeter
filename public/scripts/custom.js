@@ -11,7 +11,7 @@ const toast = (msg, success = false) => {
     // jquery selector on div #id toast
     const toast = $( `#toast.${uid}` );
     // set the div html to [msg], then fadeIn .5 sec delay 2 sec, fadeOut 1 sec
-    toast.html(msg) && toast.fadeTo(500, 1).delay(2000).fadeTo(1000, 0, () => {
+    toast.html(msg) && toast.fadeTo(500, 1).delay(500).fadeTo(1000, 0, () => {
       // burn the toast
       $( `#toast.${uid}` ).remove();
     });
@@ -34,7 +34,7 @@ $( document ).ready(() => {
   autosize($( "#tweet-text" ));
   // fade out the tweet-text label on input
   $( "#tweet-text" ).focus(function() {
-    $( "#tweet-text-label" ).fadeTo(2500, 0, function() {
+    $( "#tweet-text-label" ).fadeTo(1500, 0, function() {
     })
   });
   // fade in the tweet-text label if the field is empty */

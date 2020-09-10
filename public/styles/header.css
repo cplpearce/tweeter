@@ -1,22 +1,23 @@
 #user-header {
   display: flex;
-  height: 450px;
-  width: 100%;
+  width: 100vw;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #ADBEF7;
-  background-image: url(../images/userBG/cartographer.png);
+  background-color: #429ef5;
+  background-image: url(../images/userBG/asfalt-dark.png);
   padding: 25px 0px;
   color: white;
 }
 
-#head-h2 {
+#user-header h2 {
   margin: 25px 0px 0px 0px;
 }
 
 #avatar {
-  padding: 50px;
+  padding: 1em;
+  height: 7em;
+  width: 7em;
   clip-path: polygon(50% 0, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
   background: white;
 }

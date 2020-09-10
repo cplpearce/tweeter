@@ -54,21 +54,20 @@
         <img id="nav-arrow" class="flip" src="images/icons/down-arrow-solid-24.png">
       </div>
     </nav>
-
-    <header id="user-header">
-      <div>
-        <img height="250" width="250" id="avatar" src="/images/avatars/008-man.png"> 
-      </div>
-      <br>
-      <div>
-        <h2 id="head-h2">Clinton Pearce</h2>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <div id="tweeter-body">
-      <main class="container">
-        <!-- will be where user input their tweet -->
+    <!-- tweeter-specific content -->
+    <div id="tweeter-container">
+      <!-- user header -->
+      <header id="user-header">
+        <div>
+          <img id="avatar" src="/images/avatars/008-man.png"> 
+        </div>
+        <br>
+        <div>
+          <h2>Clinton Pearce</h2>
+        </div>
+      </header>
+      <div id="tweeter-main">
+        <!-- where users tweet -->
         <section id="new-tweet">
           <form id="new-tweet-form" method="POST" action="/tweets" type="application/x-www-form-urlencoded">
             <label id="tweet-text-label" for="tweet-text">What are you humming about?</label>
@@ -82,7 +81,7 @@
         <!-- will be built dynamically by the tweet database-->
         <section id="tweet-feed">
         </section>
-      </main>
+      </div>
     </div>
   </body>
 </html>

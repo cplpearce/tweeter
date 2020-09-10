@@ -1,14 +1,9 @@
-#new-tweet {
-  margin: 50px 0px;
-}
 
 #tweet-text {
-  zoom: 1;
+  background-color:transparent;
   width: 100%;
-  min-width: inherit;
   height: 1.2em;
   min-height: 1.2em;
-  background: transparent;
   font-size: 1em;
   outline: none;
   outline-width: 0px;
@@ -20,11 +15,14 @@
   margin: 5px 0px;
   font-weight: 700;
   color: #545149;
+  transition: background-color 1.5s ease
+}
+
+#tweet-text:focus {
+  background-color: #e3e0da;
 }
 
 #tweet-footer {
-  width: 550px;
-  min-width: 550px;
   display: flex;
   border: solid;
   border-width: 5px 0px 0px 0px;
