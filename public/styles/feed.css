@@ -44,6 +44,7 @@
   align-items: center;
   align-content: center;
   color: #aaacdb;
+  filter: invert(100%) contrast(10%) sepia(30%);
 }
 
 #tweet-feed header {

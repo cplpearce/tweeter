@@ -16,6 +16,7 @@ nav span#brand {
 }
 
 #nav-form-toggle {
+  font-size: .8em;
   display: flex;
   flex-flow: column;
   align-content: center;
@@ -23,6 +24,13 @@ nav span#brand {
 }
 
 #nav-form-toggle img {
+  transition: transform 1.5s;
   height: 20px;
   width: 20px;
+  position: relative;
+  filter: invert(100%);
+}
+
+.flip {
+  transform: rotate(180deg);
 }

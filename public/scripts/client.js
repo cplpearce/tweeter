@@ -49,7 +49,7 @@ const renderTweetOnFeed = (data, avatarKey = data.user.avatars, nameKey = data.u
 // get all the tweets from /tweets and render them
 const loadTweets = () => {
   // fade out $( '#tweet-feed' ) and clear it
-  $( '#tweet-feed' ).fadeTo(400, 0, () => {
+  $( '#tweet-feed' ).fadeTo(200, 0, () => {
     // keep $( '#tweet-feed' )'s height so the page isn't jumpy
     $( '#tweet-feed' ).css('min-height', $( '#tweet-feed' ).css('height'));
     // clear it now that it's hidden

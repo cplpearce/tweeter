@@ -18,33 +18,46 @@ const toast = (msg, success = false) => {
   });
 }
 
+const wiggle = (selector) => {
+  selector
+    .animate({'top': '+=10',}, 500, () => {
+      selector.animate({'top': '-=10',}, 500)
+    });
+};
+
 // listeners and ready functions
 $( document ).ready(() => {
-  /* increase tweet-text height dynmaically */
+  // give the form-toggle a shake so the user knows its there
+  wiggle($( '#nav-arrow' ));
+  // increase tweet-text height dynmaically
   autosize($( "#tweet-text" ));
-  /* fade out the tweet-text label on input */
+  // fade out the tweet-text label on input
   $( "#tweet-text" ).focus(function() {
-    $( "#tweet-text-label" ).fadeTo( 2500, 0, function() {
+    $( "#tweet-text-label" ).fadeTo(2500, 0, function() {
     })
   });
-  /* fade in the tweet-text label if the field is empty */
+  // fade in the tweet-text label if the field is empty */
   $( "#tweet-text" ).blur(function() {
     if (this.value.length === 0) {
-      $( "#tweet-text-label" ).fadeTo( 1500, .7, function() {
+      $( "#tweet-text-label" ).fadeTo(1500, .7, function() {
       });
     }
   });
-  // wiggle the form toggle
-  $( '#nav-form-toggle' ).mouseenter(() => {
-    $('#nav-form-toggle').animate({
-      'margin-top': '+=30',
-    }, 500)
-    .then(
-      $('#nav-form-toggle').animate({
-        'margin-top': '-=30',
-      }, 500)
-    )
+  // wiggle $( '#nav-arrow' ) on mouseover of $( '#nav-form-toggle' )
+  $( '#nav-form-toggle' ).hover(() => {
+    wiggle($( '#nav-arrow' ));
   }, () => {
+  $( '#nav-arrow' ).finish;
   });
-
+  // flip arrow and unhide new tweet
+  $( '#nav-form-toggle' ).click(() => {
+    $( '#new-tweet' ).css('display') === 'none'
+    ? $( '#nav-form-toggle' ).animate({ 'fontSize': '-=10', }, 1500)
+    : $( '#nav-form-toggle' ).animate({'fontSize': '+=10' }, 1500);
+    $( '#new-tweet' ).slideToggle(300, 'linear') && $( '#nav-arrow' ).toggleClass('flip');
+  })
+  // scroll to the top!
+  $( 'to-top-btn' ).click(() => {
+    $( 'html, body' ).animate({ scrollTop: 0 }, 1000);
+ });
 });
