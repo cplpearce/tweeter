@@ -9,7 +9,7 @@ const tweetTemplate = (avatar = '/images/avatars/001-man.png', name = 'Error', h
   return `
   <article class="tweet-container">
   <header>
-    <img class="tweet-l" src="${escape(avatar)}" width="50" height="50">
+    <img class="tweet-l" src="${escape(avatar)}">
     <span class="tweet-l">${escape(name)}</span>
     <span class="tweet-r handle">${escape(handle)}</span>
   </header>
@@ -34,6 +34,7 @@ const escape =  function(str) {
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
+
 // take in a data object, and parse it by key
 const renderTweetOnFeed = (data, avatarKey = data.user.avatars, nameKey = data.user.name, handleKey = data.user.handle, textKey = data.content.text, dateKey = data.created_at) => {
   $('#tweet-feed').append(tweetTemplate(
@@ -53,7 +54,7 @@ const loadTweets = () => {
     // keep $( '#tweet-feed' )'s height so the page isn't jumpy
     $( '#tweet-feed' ).css('min-height', $( '#tweet-feed' ).css('height'));
     // clear it now that it's hidden
-    $( '#tweet-feed' ).html('')
+    $( '#tweet-feed' ).html('');
     // use ajax to get all our tweets
     $.ajax('/tweets', 'GET')
       // then for each key, reversed (new tweets first) render them
@@ -70,13 +71,19 @@ $( document ).ready(() => {
   // submit a new tweet
   $( '#new-tweet-form' ).submit((event) => {
     event.preventDefault();
-    // sanitize user tweet data
+    // check for an empty tweet
     if (!$( '#tweet-text' ).val()) {toast('You can\'t post an empty tweet!')}
+    // or too long of a tweet
     else if ($( '#tweet-text' ).val().length > 140) {toast('Your tweet can\'t be over 140 characters!')}
+    // then post the tweet via ajax
     else {$.post('/tweets', $( '#new-tweet-form' ).serialize(), () => {
+      // inform the user
       toast('Tweeted Successfully!', true);
-      $( '#tweet-text' ).fadeOut(500, 0, () => {
-        $( '#tweet-text' ).css('display', 'inline-block') &&$( '#tweet-text' ).val('') && $( ".counter" ).html('140');
+      // fade out the user input (fadeTo so css:display doens't become hidden)
+      $( '#tweet-text' ).fadeTo(500, 0, () => {
+        // clear the text area and hard set the counter back to 140
+        $( '#tweet-text' ).val('') && $( ".counter" ).html('140');
+        // reload our tweets
         loadTweets();
       });
     })};

@@ -1,70 +1,70 @@
 .handle {
-  fill: #b6b7cf;
+  fill: rgba(182, 183, 207, 1);
   opacity: 0;
 }
 
 .tweet-container {
   display: flex;
-  width: inherit;
-  min-width: inherit;
   flex-direction: column;
   border: solid;
-  border-width: 4px;
-  margin: 25px 0px;
-  padding: 10px 25px;
+  border-width: 0.2em;
+  margin: 1em 0em;
+  padding: 0.8em .8em;
 }
 
 .tweet-container:hover {
-  background-color: #fcfaf7;
-  box-shadow: 8px 8px rgb(182, 183, 207);
+  background-color: rgba(252, 250, 247, 1);
+  box-shadow: 0.4em 0.4em #b6b7cf;
 }
 .tweet-container:hover .handle {
   opacity: .7;
 }
 
 .tweet-l {
-  height: 45px;
+  height: 100%;
   align-items: center;
   align-content: center;
-  margin: 15px 5px 15px 5px;
-  line-height: 45px;
+  margin: 0.6em 0.3em 0.6em 0em;
 }
 
 .tweet-r {
-  height: 45px;
+  height: 100%;
   align-items: center;
   align-content: center;
-  margin: 15px 5px 15px auto;
-  line-height: 45px;
+  margin: 0.6em 0em 0.6em auto;
 }
 
 .icon {
-  display: inline-block;
-  vertical-align: middle;
-  align-items: center;
   align-content: center;
-  color: #aaacdb;
+  color: rgba(170, 172, 219, 1);
   filter: invert(100%) contrast(10%) sepia(30%);
 }
 
 #tweet-feed header {
   display: flex;
   flex-direction: row;
-  text-align: center;
-  height: 50px;
-  margin-bottom: 25px;
+  align-items: center;
+  align-content: center;
+  height: 1.2em;
+  margin-bottom: .5em;
+}
+
+#tweet-feed header img {
+  width: 1.5em;
+  height: auto;
 }
 
 #tweet-feed main {
   font-weight: 400;
-  padding: 5px 10px;
   border: solid;
-  border-width: 0px 0px 4px 0px;
-  padding-bottom: 15px;
+  border-width: 0em 0em 0.2em 0em;
+  padding: .5em;
 }
 
 #tweet-feed footer {
+  height: 1.8em;
   display: flex;
   flex-direction: row;
-  font-size: .7em;
+  font-size: .8em;
+  padding: 0em .5em 0em .5em;
 }

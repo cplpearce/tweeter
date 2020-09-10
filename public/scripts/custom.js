@@ -18,6 +18,7 @@ const toast = (msg, success = false) => {
   });
 }
 
+// animate something up and down by 10px
 const wiggle = (selector) => {
   selector
     .animate({'top': '+=10',}, 500, () => {
@@ -52,12 +53,8 @@ $( document ).ready(() => {
   // flip arrow and unhide new tweet
   $( '#nav-form-toggle' ).click(() => {
     $( '#new-tweet' ).css('display') === 'none'
-    ? $( '#nav-form-toggle' ).animate({ 'fontSize': '-=10', }, 1500)
-    : $( '#nav-form-toggle' ).animate({'fontSize': '+=10' }, 1500);
+    ? $( '#nav-form-toggle' ).animate({ 'fontSize': '-=10', }, 400)
+    : $( '#nav-form-toggle' ).animate({'fontSize': '+=10' }, 400);
     $( '#new-tweet' ).slideToggle(300, 'linear') && $( '#nav-arrow' ).toggleClass('flip');
-  })
-  // scroll to the top!
-  $( 'to-top-btn' ).click(() => {
-    $( 'html, body' ).animate({ scrollTop: 0 }, 1000);
- });
+  });
 });
