@@ -70,7 +70,7 @@ $( document ).ready(() => {
     else {$.post('/tweets', $( '#new-tweet-form' ).serialize(), () => {
       toast('Tweeted Successfully!', true);
       $( '#tweet-text' ).fadeOut(500, 0, () => {
-        $( '#tweet-text' ).val('') && $( ".counter" ).html('140');
+        $( '#tweet-text' ).css('display', 'inline-block') &&$( '#tweet-text' ).val('') && $( ".counter" ).html('140');
         loadTweets();
       });
     })};
