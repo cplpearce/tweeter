@@ -5,7 +5,8 @@
 
 .tweet-container {
   display: flex;
-  width: 700px;
+  width: inherit;
+  min-width: inherit;
   flex-direction: column;
   border: solid;
   border-width: 4px;

@@ -29,8 +29,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 700px;
+  width: 550px;
+  min-width: 550px;
   margin: 0 auto;
+}
+
+#container {
+  width: 550px;
+  min-width: 550px;
 }
 
 #toast {

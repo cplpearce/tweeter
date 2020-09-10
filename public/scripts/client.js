@@ -28,6 +28,7 @@ const tweetTemplate = (avatar = '/images/avatars/001-man.png', name = 'Error', h
   `
 };
 
+// take in a data object, and parse it by key
 const renderTweetOnFeed = (data, avatarKey = data.user.avatars, nameKey = data.user.name, handleKey = data.user.handle, textKey = data.content.text, dateKey = data.created_at) => {
   $('#tweet-feed').append(tweetTemplate(
     avatarKey,
@@ -39,11 +40,21 @@ const renderTweetOnFeed = (data, avatarKey = data.user.avatars, nameKey = data.u
   );
 }
 
+// get all the tweets from /tweets and render them
 const loadTweets = () => {
-  $.ajax('/tweets', 'GET')
-      .then((response) => {
-        Object.keys(response).map((tweet) => renderTweetOnFeed(response[tweet]));
-  });
+  // fade out $( '#tweet-feed' ) and clear it
+  $( '#tweet-feed' ).fadeTo(400, 0, () => {
+    // keep $( '#tweet-feed' )'s height so the page isn't jumpy
+    $( '#tweet-feed' ).css('min-height', $( '#tweet-feed' ).css('height'));
+    // clear it now that it's hidden
+    $( '#tweet-feed' ).html('')
+    // use ajax to get all our tweets
+    $.ajax('/tweets', 'GET')
+      // then for each key, reversed (new tweets first) render them
+      .then((response) => {Object.keys(response).reverse().map((tweet) => renderTweetOnFeed(response[tweet]))})
+      // then, fade $( '#tweet-feed' ) back in
+      .then($( '#tweet-feed' ).fadeTo(1500, 1));
+  })
 }
 
 /* on document ready, fetch the previous tweets from your source
@@ -56,7 +67,13 @@ $( document ).ready(() => {
     // sanitize user tweet data
     if (!$( '#tweet-text' ).val()) {toast('You can\'t post an empty tweet!')}
     else if ($( '#tweet-text' ).val().length > 140) {toast('Your tweet can\'t be over 140 characters!')}
-    else {$.post('/tweets', $( '#new-tweet-form' ).serialize()) && $( '#tweet-text' ).val('') && toast('Tweeted Successfully!', true)};
+    else {$.post('/tweets', $( '#new-tweet-form' ).serialize(), () => {
+      toast('Tweeted Successfully!', true);
+      $( '#tweet-text' ).fadeOut(500, 0, () => {
+        $( '#tweet-text' ).val('') && $( ".counter" ).html('140');
+        loadTweets();
+      });
+    })};
   });
 
   // render all the tweets to our page
