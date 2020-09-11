@@ -3,7 +3,7 @@
 <p align="center" ><b>Has Twitter Gotten Stale?</b></p>
 
 ##### What:
-Tweeter is a personalized platform for hosting your own thoughts!  Post tweets up to 140 characters (but no more than that!), read the tweets of others, and share your ![short-links](https://github.com/cplpearce/tinyapp) you've been keeping to yourself!
+Tweeter is a personalized platform for hosting your own thoughts!  Post tweets up to 140 characters (but no more than that!), read the tweets of others, and share your [short-links](https://github.com/cplpearce/tinyapp) you've been keeping to yourself!
 
 Included in the app is user input sanitization (no nasty javascipt injects), and error handling for tweet length, or absence of length.
 
