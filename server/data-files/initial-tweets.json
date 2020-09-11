@@ -9,7 +9,7 @@
     "content": {
       "text": "If I have seen further it is by standing on the shoulders of giants"
     },
-    "created_at": 1597896000
+    "created_at": 1597896000000
   },
   {
     "user": {
@@ -24,11 +24,21 @@
   {
     "user": {
       "name": "Ice Cube",
-      "avatars": "https://i7.pngguru.com/preview/130/82/547/t-shirt-ice-cube-wall-decal-rapper-rap.jpg",
+      "avatars": "https://nextcloud.ironmantle.ca/s/qXa7eJ4xDAoyq39/preview",
       "handle": "@iceCube" },
     "content": {
       "text": "Today was a good day."
     },
     "created_at": 1599364800000
+  },
+  {
+    "user": {
+      "name": "Dual Core",
+      "avatars": "https://nextcloud.ironmantle.ca/s/WGpJaGtM8NsE7WE/preview",
+      "handle": "@dualcore" },
+    "content": {
+      "text": "Hack all the things!"
+    },
+    "created_at": 1599829200000
   }
 ]
