@@ -9,7 +9,7 @@
     "content": {
       "text": "If I have seen further it is by standing on the shoulders of giants"
     },
-    "created_at": 1461116232227
+    "created_at": 1597896000
   },
   {
     "user": {
@@ -19,6 +19,16 @@
     "content": {
       "text": "Je pense , donc je suis"
     },
-    "created_at": 1461113959088
+    "created_at": 1599451200000
+  },
+  {
+    "user": {
+      "name": "Ice Cube",
+      "avatars": "https://i7.pngguru.com/preview/130/82/547/t-shirt-ice-cube-wall-decal-rapper-rap.jpg",
+      "handle": "@iceCube" },
+    "content": {
+      "text": "Today was a good day."
+    },
+    "created_at": 1599364800000
   }
 ]
