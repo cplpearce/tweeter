@@ -2,7 +2,7 @@
   fill: rgba(182, 183, 207, 1);
   opacity: 0;
 }
-
+/* the indidual tweet container */
 .tweet-container {
   border: solid;
   border-width: 0.2em;
@@ -17,7 +17,7 @@
 .tweet-container:hover .handle {
   opacity: .7;
 }
-
+/* tweet-l/r shift elements left or right */
 .tweet-l {
   height: 100%;
   align-items: center;
@@ -37,7 +37,7 @@
   color: rgba(170, 172, 219, 1);
   filter: invert(100%) contrast(10%) sepia(30%);
 }
-
+/* the below reference the indidiual tweets */
 #tweet-feed header {
   display: flex;
   flex-direction: row;

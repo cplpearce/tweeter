@@ -25,7 +25,12 @@ body {
   font-size: 1.5em;
   font-family: 'Source Sans Pro', sans-serif;
 }
-
+/* div that wraps the new-tweet field and feed */
+#tweeter-main {
+  width: 90%;
+  max-width: 550px;
+}
+/* includes the user header, and the new tweet field and feed */
 #tweeter-container {
   display: flex;
   flex-flow: column;
@@ -34,7 +39,7 @@ body {
   min-width: 150px;
   margin: 0 1em;
 }
-
+/* message generated for the user */
 #toast {
   position: absolute;
   left: 30%;
@@ -50,17 +55,34 @@ body {
   z-index: 5;
   bottom: 70px;
 }
-
+/* fail and success are function vars to attribute specific classes */
 #toast.fail {
   box-shadow: 8px 8px #bd2a2a;
   border: 4px solid #bd2a2a;
   color: #bd2a2a;
 }
-
+/*  as above  */
 #toast.success {
   box-shadow: 8px 8px #289947;
   border: 4px solid #289947;
   color: #289947;
+}
+/* the circle that appears on the page to scroll up */
+#scroll-up {
+  opacity: .7;
+  transform: rotate(180deg);
+  align-content: center;
+  justify-content: center;
+  display: none;
+  left: 85%;
+  bottom: 10%;
+  position: sticky;
+  height: 3em;
+  width: 3em;
+  border: .2em solid #545149;
+  border-radius: 50%;
+  background:url(../images/icons/down-arrow-solid-24.png) center center no-repeat;
+  background-color: #e3e0da;
 }
 
 @media (max-width: 850px) {

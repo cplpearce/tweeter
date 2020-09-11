@@ -25,6 +25,9 @@
     <!-- Feed CSS -->
     <link rel="stylesheet" href="/styles/feed.css" type="text/css" />
 
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="./images/favicon.ico">
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -42,16 +45,15 @@
     
     <!-- disable viewport scaling -->
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
-
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span id="brand">tweeter</span>
-      <div id="nav-form-toggle">
-        <span id="nav-toggle-span"><strong>Write</strong> a new tweet</span>
-        <img id="nav-arrow" class="flip" src="images/icons/down-arrow-solid-24.png">
+      <div id="nav-form-toggle" class="navClicked">
+        <span><strong>Write</strong> a new tweet</span>
+        <img id="nav-arrow" src="images/icons/down-arrow-solid-24.png">
       </div>
     </nav>
     <!-- tweeter-specific content -->
@@ -63,7 +65,7 @@
         </div>
         <br>
         <div>
-          <h2>Clinton Pearce</h2>
+          <p><strong>Clinton</strong> Pearce</p>
         </div>
       </header>
       <div id="tweeter-main">
@@ -82,6 +84,9 @@
         <section id="tweet-feed">
         </section>
       </div>
+    </div>
+    <!-- our take us back up button - appears after 200px scrolled -->
+    <div id="scroll-up"></div>
     </div>
   </body>
 </html>

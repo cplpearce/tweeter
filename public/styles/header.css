@@ -13,7 +13,7 @@
 #user-header h2 {
   margin: 25px 0px 0px 0px;
 }
-
+/* the user image is wrapped in a clip-path to avoid manipulating user images */
 #avatar {
   padding: 1em;
   height: 7em;

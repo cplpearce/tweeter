@@ -7,44 +7,88 @@ nav {
   background-color: #4056A1;
   align-content: center;
   align-items: center;
-  padding: 0px 50px;
+  padding: 0px 3em;
 }
-
-nav span#brand {
+/* the TWEETER logo */
+#brand {
   font-family: 'Bungee', cursive;
   font-size: 50px;
 }
-
+/* this div wraps the expand-form function */
 #nav-form-toggle {
-  font-size: .8em;
+  font-size: .6em;
   display: flex;
   flex-flow: column;
   align-content: center;
   align-items: center;
 }
+/* when the $( '#nav-form-toggle' ) is clicked, scale it up */
+.navClicked {
+  animation : pulse 1.5s infinite;
+  transform: scale(1.4);
+}
+
+#nav-form-toggle:hover {
+  animation : pulse .5s infinite;
+}
 
 #nav-form-toggle img {
-  transition: transform .5s;
   height: 20px;
   width: 20px;
-  position: relative;
   filter: invert(100%);
+  animation: jump 1.5s infinite;
 }
-
-.flip {
-  transform: rotate(180deg);
-}
-
+/* below 850px and above 400px, do */
 @media (max-width: 850px) {
   nav {
     background-color: #429ef5;
     background-image: url(../images/userBG/asfalt-dark.png);
-    font-size: 4vw;
   }
-
   nav #brand #nav-form-toggle { 
     position: absolute;
     height: 3em;
     top: 3em;
+    font-size: 4vw;
+  }
+  #brand {
+    font-size: 6vw
+  } 
+}
+/* below 400px do */
+@media (max-width: 400px) {
+  nav { 
+    height: 3em;
+    font-size: 3vw;
+  }
+  #brand {
+    font-size: 3vw
+  } 
+}
+
+
+@keyframes pulse {
+  from {
+      transform : scale(1);
+      opacity   : 1;
+  }
+  50% {
+      transform : scale(1.2);
+      opacity   : 0.25;
+  }
+  to {
+      transform : scale(1);
+      opacity   : 1;
+  }
+}
+
+@keyframes jump {
+  from {
+      transform : translateY(0px);
+  }
+  50% {
+      transform : translateY(10px);
+  }
+  to {
+      transform : translateY(0px);
   }
 }
