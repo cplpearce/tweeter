@@ -1,17 +1,30 @@
-# Tweeter Project
+<p align="center" ><b>Tweeter</b></p>
+<p align="center"><img width="220" height="300" src="https://github.com/cplpearce/tweeter/blob/master/screenshots/tweeter-mobile-layout.png"></p>
+<p align="center" ><b>Has Twitter Gotten Stale?</b></p>
 
-Tweeter is a simple, single-page Twitter clone.
+##### What:
+Tweeter is a personalized platform for hosting your own thoughts!  Post tweets up to 140 characters (but no more than that!), read the tweets of others, and share your ![short-links](https://github.com/cplpearce/tinyapp) you've been keeping to yourself!
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+Included in the app is user input sanitization (no nasty javascipt injects), and error handling for tweet length, or absence of length.
 
-## Getting Started
+##### Who:
+This little app will suit anyone, however I should warn you at this stage this is purely a self-contained application.  When you do tweet, to your millions of followers, sadly only you will be able to read them.
 
-1. Fork this repository, then clone your fork of this repository.
-2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
+##### How:
+First clone this to your local machine running Nodejs.  Then npm install the following:
+*    "body-parser": "^1.15.2",
+*    "chance": "^1.0.2",
+*    "express": "^4.13.4",
+*    "md5": "^2.1.0"
 
-## Dependencies
+Or download the app and run `npm i` to get all the packages required - then `npm start` and navigate your browser to `localhost:8080`!
 
-- Express
-- Node 5.10.x or above
+##### Screen Shots:
+### Desktop Layout
+![desktop layout](https://github.com/cplpearce/tweeter/blob/master/screenshots/tweeter-desktop-layout.png)
+### Write a Tweet
+![new tweet](https://github.com/cplpearce/tweeter/blob/master/screenshots/tweeter-writing-a-tweet.png)
+### Post a Tweet
+![post](https://github.com/cplpearce/tweeter/blob/master/screenshots/tweeter-tweet-posted.png)
+### Tweet Too Long
+![tweet error](https://github.com/cplpearce/tweeter/blob/master/screenshots/tweeter-tweet-too-long.png)
