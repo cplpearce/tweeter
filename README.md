@@ -11,7 +11,9 @@ Included in the app is user input sanitization (no nasty javascipt injects), and
 This little app will suit anyone, however I should warn you at this stage this is purely a self-contained application.  When you do tweet, to your millions of followers, sadly only you will be able to read them.
 
 ##### How:
-First clone this to your local machine running Nodejs.  Then npm install the following:
+This project is created using a mix of Nodejs, Javascript, jquery, html/css, and various other mechanisms for displaying html.  The backend of this app was created by Lighthouse Labs.
+
+To get this running on your local machine running Nodejs, npm install the following:
 *    "body-parser": "^1.15.2",
 *    "chance": "^1.0.2",
 *    "express": "^4.13.4",
