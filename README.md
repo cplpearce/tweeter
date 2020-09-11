@@ -10,23 +10,27 @@ Included in the app is user input sanitization (no nasty javascipt injects), and
 ##### Who:
 This little app will suit anyone, however I should warn you at this stage this is purely a self-contained application.  When you do tweet, to your millions of followers, sadly only you will be able to read them.
 
-##### How:
+##### How (Dependencies)
 This project is created using a mix of Nodejs, Javascript, jquery, html/css, and various other mechanisms for displaying html.  The backend of this app was created by Lighthouse Labs.
 
-To get this running on your local machine running Nodejs, npm install the following:
-*    "body-parser": "^1.15.2",
-*    "chance": "^1.0.2",
-*    "express": "^4.13.4",
-*    "md5": "^2.1.0"
+To run the app you require:
+* Node 5.10.x or above:
 
-Or download the app and run `npm i` to get all the packages required - then `npm start` and navigate your browser to `localhost:8080`!
+To get this running on your local machine running Nodejs, `npm install` the following:
+
+* body-parser: ^1.15.2,
+* chance:      ^1.0.2,
+* express:     ^4.13.4,
+* md5:         ^2.1.0
+
+Or download the app and run `npm i` to get all the packages required - then `npm start`, and finally navigate your browser to `localhost:8080`!
 
 ##### Screen Shots:
 ### Desktop Layout
 ![desktop layout](https://github.com/cplpearce/tweeter/blob/master/screenshots/tweeter-desktop-layout.png)
 ### Write a Tweet
 ![new tweet](https://github.com/cplpearce/tweeter/blob/master/screenshots/tweeter-writing-a-tweet.png)
-### Post a Tweet
+### Posting a New Tweet
 ![post](https://github.com/cplpearce/tweeter/blob/master/screenshots/tweeter-tweet-posted.png)
-### Tweet Too Long
+### Your Tweet Is Too Long
 ![tweet error](https://github.com/cplpearce/tweeter/blob/master/screenshots/tweeter-tweet-too-long.png)
