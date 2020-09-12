@@ -53,5 +53,5 @@ $( document ).ready(() => {
     $([document.documentElement, document.body]).animate({
         scrollTop: $( 'head' ).offset().top
     }, 300);
-});
+  });
 });

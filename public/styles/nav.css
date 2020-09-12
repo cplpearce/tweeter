@@ -24,19 +24,19 @@ nav {
 }
 /* when the $( '#nav-form-toggle' ) is clicked, scale it up */
 .navClicked {
-  animation : pulse 1.5s infinite;
+  animation : pulse 2s infinite;
   transform: scale(1.4);
 }
 
 #nav-form-toggle:hover {
-  animation : pulse .5s infinite;
+  animation : pulse 1s infinite;
 }
 
 #nav-form-toggle img {
   height: 20px;
   width: 20px;
   filter: invert(100%);
-  animation: jump 1.5s infinite;
+  animation: jump 2s infinite;
 }
 /* below 850px and above 400px, do */
 @media (max-width: 850px) {
@@ -73,7 +73,7 @@ nav {
   }
   50% {
       transform : scale(1.2);
-      opacity   : 0.25;
+      opacity   : 0.45;
   }
   to {
       transform : scale(1);
